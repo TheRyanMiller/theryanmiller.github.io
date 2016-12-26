@@ -35,9 +35,7 @@ comments: true
 					{% endfor %}
 			   </div>
 			</h4>
+			{% include disqus.html %}
 		</div>
 	</div>
 </div>
-{% if page.comments %}
-	{% include disqus.html %}
-{% endif %}

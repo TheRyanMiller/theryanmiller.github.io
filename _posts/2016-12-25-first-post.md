@@ -2,6 +2,7 @@
 layout: post
 title: My first blog post!
 author: Ryan Miller
+comments: true
 tags:
 - Jekyll
 ---
