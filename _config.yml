@@ -4,6 +4,9 @@ markdown: rdiscount
 rdiscount:
 extensions: [smart]
 permalink: /:title.html
+_yaml_mode: loose
+_content_type: markdown
+_markdown_parser: parsedown
 #paginate: 5
 port: 3000
 safe: true
