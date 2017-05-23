@@ -11,7 +11,7 @@ body {
 }
 /* Wrapper for page content to push down footer */
 #wrap {
-  padding-bottom: 50px;	
+  padding-bottom: 50px;
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
@@ -91,7 +91,6 @@ body {
 .container {
   width: auto;
   max-width: 800px;
-  text-align: center;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -147,7 +146,7 @@ body {
   padding-bottom: 15px;
 }
 
-/* Footer 
+/* Footer
 -------------------------------------------------- */
 
 .footer {
@@ -157,11 +156,11 @@ body {
 	color: #6b6b6b;
 }
 div.footer{
-  border-bottom: 5px solid #58a5f7;  
+  border-bottom: 5px solid #58a5f7;
 }
 /* Set the fixed height of the footer here */
 /*.footer {
   height: 50px;
   padding-bottom: 15px;
-  
+
 }*/
