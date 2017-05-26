@@ -9,8 +9,8 @@ tags:
 - Ethereum
 ---
 
-#Getting Started with Solidity on Windows
-####Table of Contents
+# Getting Started with Solidity on Windows
+#### Table of Contents
 * [Installing Go Ethereum (geth)](#installing)  
 * [Set up a test/dev blockchain](#setup)  
 * [Mining on your dev chain](#mining)   
@@ -21,9 +21,9 @@ tags:
 
 
 
-###<a name="installing">Installing Go Ethereum (geth)</a>  
+### <a name="installing">Installing Go Ethereum (geth)</a>  
 
-###<a name="setup">Set up a test/dev blockchain </a>   
+### <a name="setup">Set up a test/dev blockchain </a>   
 By default, geth will connect to the main consensus network and begin downloading the full blockchain (very large!). To avoid this default behavior, and to instead create and mine your own private chain, you must create a custom "genesis" block ([example here](https://github.com/ethereum/go-ethereum/wiki/Private-network), [and here](/genesisblock.html)).
 Here are some quick steps I used:   
 
@@ -47,7 +47,7 @@ Here are some quick steps I used:
 
 Note: you can also set variables to be referenced later as you would in any JavaScript console, e.g.: `var primaryAcct = personal.listAccounts[0]`
 
-###<a name="mining">Mining on your dev chain</a>  
+### <a name="mining">Mining on your dev chain</a>  
 Before you start mining, it is a good idea to create an account first. If you haven't already done so, it's simple. Use one of these two methods:  
 * From Windows command prompt, enter `geth account new`
 * From the web3 JavaScript console enter `personal.newAccount()`
