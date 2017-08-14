@@ -49,9 +49,11 @@ Note: you can also set variables to be referenced later as you would in any Java
 
 ### <a name="mining">Mining on your dev chain</a>  
 Before you start mining, it is a good idea to create an account first. If you haven't already done so, it's simple. Use one of these two methods:  
-* From Windows command prompt, enter `geth account new`
-* From the web3 JavaScript console enter `personal.newAccount()`
+- From Windows command prompt, enter `geth account new`  
+- From the web3 JavaScript console enter `personal.newAccount()`  
+
 Both of these methods will prompt you for a password. If you haven't already done so, make sure to insert one of your account addresses into the genesis block file so that you can receive the genesis funds, as it is designed to deposit money into the account you've specified.  
+
 To begin mining, open your web3 JS console and use the command `miner.start(1)`. This should start mining. After a short amount of time (assuming the difficulty set in your genesis file is low) you should have mined your first test net block!
 To make sure, let's check your account balance:
 `eth.getBalance(eth.coinbase)`  
