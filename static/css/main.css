@@ -95,6 +95,11 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+.centered {
+  width: auto;
+  max-width: 800px;
+  text-align: center
+}
 .img-responsive {
  display: block;
  height: auto;
