@@ -1,1 +1,68 @@
-keybase proof
+==================================================================
+https://keybase.io/ryanmiller
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://theryanmiller.com
+  * I am ryanmiller (https://keybase.io/ryanmiller) on keybase.
+  * I have a public key with fingerprint 3B99 DEA5 1EE0 EDAC DF4B  7158 5FA6 9337 22DF 2D95
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101fda1d97a883cc4b172067ea5eb7d475a19f6ea043765d1189a91b6f458f405a60a",
+      "fingerprint": "3b99dea51ee0edacdf4b71585fa6933722df2d95",
+      "host": "keybase.io",
+      "key_id": "5fa6933722df2d95",
+      "kid": "0101fda1d97a883cc4b172067ea5eb7d475a19f6ea043765d1189a91b6f458f405a60a",
+      "uid": "736a58ce6b8c414c35db9f796b546100",
+      "username": "ryanmiller"
+    },
+    "service": {
+      "hostname": "theryanmiller.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1508896380,
+  "expire_in": 157680000,
+  "prev": "76351053bc7f2537e85ba3ed79b0bec1c380691acfbaaa83d9f3cc91209c3f2c",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMIkAnicrZJJaBRBFIYnZsOoMYhGQUEpV0yUrq6u7q7BgIoHL9GoI0YjjFXV1Zk2
+M92Tnk5M0BEhorig4EqCAbcERAUViSEXt4gHFxQUMYtBUBRXRMVDDlodFC8erUtR
+r/7/q/89qndcbqQoJ9552ABDC47m3LvZ3hBZ//nTtq2AeVYziG4FdWJkE0lLZIJ4
+nWOBKFCgAm2LQosY1DQR5xqDhqrohqBYMMPSDEwhsXVBFQ0ZOrYgNAklkOm2hk1b
+UzDVFQrKge24tcJP+44bSCxihFgSAYVQhEW5ZWvMgNjENtUJQoaqWrZqESyNCS8T
+OmQ4RjNioePJmjzER+L9Q/+fczeM4AykU2xyoTOTa1DjCFuM2AbRGdZ0qCihMCN8
+l6aEVPvN1E05yaTwQbYcyHqjw0U42rCX35ogIf7KFnIvJRFp3ws87iXldSII0tHQ
+HTSnQ/kWweK/QXHmuJacpjQ0Cj/jeC6IQqnkgROSIVZMk+jIVMqBaEo7vog7oQIb
+uqnIFT4jGsOedIShghHjhq1iZAgTM4qEZRCmMMEhlwidQMptRik1kUVsOUcCVYVw
+ZKschK3Vux6IEhmT1kpkxql1adDgC5C9dWNjXiSnKFKQPyr8ZZGi0SV//t7lp4U/
+k5uWLxvvP3lYubcthz8+3+kf3J4PflTdAANlS7sOVF4sftC6av9Kv2NHYvj2uoro
+hkXVubvV/VNqnvXo7tw1sZmnjiydfX/XywcD5eh1T//xTYnv915OrTvtNT3sTjyP
+DbbM6HBfLObfLp68M3W64716va+mJDdbeHdwqHgoloLxoQ/1lWMLS/O/DJ9OZEsm
+bv94BXRdTVbj1TuXzH+0pKR3jd/3/tiFWaS0Lc9153asjZUdrtfPnE2hgnETWtG7
+N6vZ9THuuc5507/OOrGi5S2vmrMnofQ+3vIsfqmjvu8aHTWtP0uXdxdUnhquKMZV
+w6SH7rBrBtXJsUnaofZjm9t/AYZCPek=
+=219R
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ryanmiller
+
+==================================================================
