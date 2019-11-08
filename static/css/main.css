@@ -22,7 +22,16 @@ body {
 
 /* Navbar
 -------------------------------------------------- */
+a.nostyle:link {
+  text-decoration: inherit;
+  color: inherit;
+}
 
+a.nostyle:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
 .navbar-static-top {
   margin-bottom: 10px;
 }
