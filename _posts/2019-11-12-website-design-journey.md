@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Building a DCA Crypto Bot
+title: Website Design Journey
 author: Ryan Miller
 comments: true
 tags:
-- Coinbase Pro
-- API 
-- TypeScript
+- React
+- Bootstrap
+- Wireframing
+- Design
 ---
 First thing's first: I'm not a designer. My approach to building sites has always been to start with the business logic and functionality, then worry about making it look pretty later. This philosophy has worked fine for my self-guided hobby projects, but what about working with a partner or team? 
 
