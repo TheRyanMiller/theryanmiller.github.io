@@ -1,5 +1,6 @@
 /* Main page with stikky-footer
 -------------------------------------------------- */
+@import "pygments.css";
 html,
 body {
   position: relative;
@@ -81,7 +82,7 @@ a.nostyle:visited {
 .navbar-default .navbar-link:hover {
   color: #6b6b6b;
 }
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #6b6b6b;
   }
