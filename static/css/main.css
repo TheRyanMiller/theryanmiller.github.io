@@ -8,7 +8,7 @@ body {
   background-color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
   /* The html and body elements cannot have any padding or margin. */
-  border-top: 3px solid #58a5f7;
+  border-top: 3px solid #591977;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -171,7 +171,11 @@ a.nostyle:visited {
 	color: #6b6b6b;
 }
 div.footer{
-  border-bottom: 5px solid #58a5f7;
+  border-bottom: 5px solid #591977;
+}
+
+a{
+  color: #591977;
 }
 /* Set the fixed height of the footer here */
 /*.footer {

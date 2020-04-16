@@ -40,12 +40,26 @@ https://jamielinux.com/docs/openssl-certificate-authority/sign-server-and-client
 
 #### Cert must match common name
 https://support.dnsimple.com/articles/what-is-common-name/
+Chrome requires Subject Alt Name:
+  
+1. https://superuser.com/questions/1202498/create-self-signed-certificate-with-subjectaltname-to-fix-missing-subjectaltnam  
+
+2. https://alexanderzeitler.com/articles/Fixing-Chrome-missing_subjectAltName-selfsigned-cert-openssl/
 
 ##### Create signing request  
-winpty openssl req -config openssl.cnf -key private/ca.key.pem -new -sha256 -out csr/crypto-bot-client.csr.pem  
+
+```
+winpty openssl req -config openssl.cnf  -key private/localhost.pem -new -sha256 -out csr/localhost.csr -extfile v3.ext
+```
 
 ##### Sign cert request
-winpty openssl ca -config openssl.cnf -extensions server_cert -days 800 -notext -md sha256 -in csr/www.localhost.com.csr.pem -out certs/www.localhost.com.cert.pem
+
+```
+winpty openssl ca -config openssl.cnf -extensions server_cert -days 100 -notext -md sha256 -in csr/localhost.csr -out certs/localhost.pem -extfile v3.ext
+
+```
+
+
 
 #### Sign dev server cert
 
