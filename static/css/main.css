@@ -23,6 +23,10 @@ body {
 
 /* Navbar
 -------------------------------------------------- */
+
+img {
+  max-width: 100%;
+}
 a.nostyle:link {
   text-decoration: inherit;
   color: inherit;
