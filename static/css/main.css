@@ -26,6 +26,7 @@ body {
 
 img {
   max-width: 100%;
+  display: block;
 }
 a.nostyle:link {
   text-decoration: inherit;

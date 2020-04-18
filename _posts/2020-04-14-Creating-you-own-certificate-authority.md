@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating your own Certificate Authority to generate valid server certs for your dev environment
+title: Creating your own Certificate Authority & generating valid server certs for your apps
 author: Ryan Miller
 comments: true
 tags:
@@ -11,7 +11,7 @@ tags:
 ---
 
 ### Setting up a development environment with valid HTTPS certs
-I have been getting familiarized with PKI and certificate processes through some activities at work recently and decided I wanted to see how hard it'd be to implement my own Certificate Authority, and enforce https traffic for my projects on my local develo. Also, since I plan on running my [Crypto-bot](https://github.com/TheRyanMiller/crypto-bot) server live on my home network soon, it would be smart of me to make sure all traffic to/from those APIs is encrpted. So I decided my experiment here would be to get local certs setup to enforce https on both my React web app and node back-end. If my browsers (Chrome, FIrefox, and Postman) all verify my certs and the app functionality all works, then I'll know I was successful.
+I have been getting familiarized with PKI and certificate processes through some activities at work recently and decided I wanted to see how hard it'd be to implement my own Certificate Authority, and enforce https traffic for my projects on my local development machine. Also, since I plan on running my [Crypto-bot](https://github.com/TheRyanMiller/crypto-bot) server live on my home network soon, it would be smart of me to make sure all traffic to/from those APIs is encrypted, and using certs that are trusted by my users' operating systems and browsers. So I decided my experiment here would be to get local certs setup to enforce https on both my React web app and node back-end. If my browsers (Chrome, FIrefox, and Postman) all verify my certs and the app functionality all works, then I'll know I was successful.
 
 ### Starting Create React App with HTTPS enabled
 First, let's configure our React app to startup with https enabled. I'm running on Windows, so the command is a little different, but to do this, simply update your `start` script in `package.json` to the following:  
