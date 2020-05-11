@@ -10,7 +10,7 @@ tags:
 - TLS certs
 ---
 
-### Securing your MongoDb instance
+### Securing your MongoDb instance with user/password authentication
 *Note: This article assumes use of a Windows machine*  
 By default, there is no security enforced on a fresh install of MongoDB. While this may be convenient in some local development environments, it's unacceptable 
 in most cases, especially in production. Luckily, enabling security is quite simple and only requires a few steps.  
@@ -96,7 +96,25 @@ db.testcollection.insert({test:"test"}) // should fail
 ```
 We should see and "Unauthorized" error with the command above because it is attempt to create/operate on a collection (`testcollection`) that it doesn't have access to.
 
+### Securing your Mongo DB to remote hosts
+In this section we'll discuss how to connect to your database from a remote host (e.g. via SSH or a remote application server). The trick here is to allow access to the hosts we need, while also limiting access as much as possible so as not give hackers more opportunities than necessary (e.g. allowing full access to all hosts on the internet would be a bad idea). 
+The way to set this up is to modify the mongo config. As we saw in the previous section, MongoDB's config file is located by default in `/etc/mongod.conf`. Scroll down far enough and you'll see a section for network interfaces.
 
+```
+# network interfaces
+net:
+  port: 27017
+  bindIp: 192.168.1.99,127.0.0.1
+```
+
+In the config above, you will want to set the port that mongod will listen on, as well as the IPs that it will listen on separated by commas and no spaces. 
+Note that these *are not* the IPs of remote hosts, but rather the listening interfaces on our server.
+- 192.168.1.99 is the local IP of
+- 127.0.0.1 is the loopback address which will allow connections from our server itself
+In effect, this will allow any host who can speak to 192.168.1.99 interface (i.e. all other hosts on my LAN, for example 192.168.1.24, etc) to connect. However, it will not allow traffic from the broader internet to connect. If we wanted to allow that we could use either:
+- 0.0.0.0 as a an `allow-all` or
+- [insert public-facing internet IP, e.g. 44.45.66.18]  
+Assuming you've updated your config, the final thing we need to do now is restart your mongod service using the `sudo service restart mongod` command, to allow the service to pickup your new configuration.
 
 ### References
 - [Mongo Docs - create user](https://docs.mongodb.com/manual/reference/method/db.createUser/)
