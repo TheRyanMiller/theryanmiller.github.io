@@ -38,19 +38,19 @@ First, add your `<Formik> </Formik>` element as shown in the example below. Form
 Let's take a look at the code snippet below which can help explain some key functionality.
 
 ```
-<Formik
-    initialValues={{
-      accountId: "123",
-      firstName: "Ryan",
-      lastName: "Miller",
-      email: "example@example.com"
-      balance: 100;
-    }}
->
- {({values, errors, handleChange})} =>	(
-	<div>Content here.</div>
- )
-</Formik>
+  <Formik
+      initialValues={{
+        accountId: "123",
+        firstName: "Ryan",
+        lastName: "Miller",
+        email: "example@example.com"
+        balance: 100;
+      }}
+  >
+  {({values, errors, handleChange})} =>	(
+    <div>Content here.</div>
+  )
+  </Formik>
 ```
 
 With our initial values passed in, focus your attention now in between the Formik element tags. Notice we have a JavaScript function which supplies several parameters. These parameters is where we define all the properties that Formik gives us access to. For example `values` maps to the `initialValues` data that Formik is now tracking for us. Anywhere within the Formik context, I can now refer to, say, `values.firstName` and to get its current value.

@@ -1,0 +1,76 @@
+{
+  "Charleston by Drone": [
+    {
+      "width": 2479,
+      "height": 5958,
+      "path": "./photos/Charleston by Drone/73DAF9B09FEA276AB596CD8DFF5A48C6.jpg",
+      "compressed_path": "./photos/Charleston by Drone/73DAF9B09FEA276AB596CD8DFF5A48C6.min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/73DAF9B09FEA276AB596CD8DFF5A48C6.placeholder.jpg"
+    },
+    {
+      "width": 1744,
+      "height": 3636,
+      "path": "./photos/Charleston by Drone/7B058EEA7360279F2731BD58A1D7D4AA.jpg",
+      "compressed_path": "./photos/Charleston by Drone/7B058EEA7360279F2731BD58A1D7D4AA.min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/7B058EEA7360279F2731BD58A1D7D4AA.placeholder.jpg"
+    },
+    {
+      "width": 2777,
+      "height": 4952,
+      "path": "./photos/Charleston by Drone/96F0A4DC78C854A55BBDCEFEC822C7BE.jpg",
+      "compressed_path": "./photos/Charleston by Drone/96F0A4DC78C854A55BBDCEFEC822C7BE.min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/96F0A4DC78C854A55BBDCEFEC822C7BE.placeholder.jpg"
+    },
+    {
+      "width": 4808,
+      "height": 3205,
+      "path": "./photos/Charleston by Drone/E87991CC321652A281F7D9A230E6A7B8.jpg",
+      "compressed_path": "./photos/Charleston by Drone/E87991CC321652A281F7D9A230E6A7B8.min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/E87991CC321652A281F7D9A230E6A7B8.placeholder.jpg"
+    },
+    {
+      "width": 1770,
+      "height": 3340,
+      "path": "./photos/Charleston by Drone/FullSizeRender(1).jpg",
+      "compressed_path": "./photos/Charleston by Drone/FullSizeRender(1).min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/FullSizeRender(1).placeholder.jpg"
+    },
+    {
+      "width": 1781,
+      "height": 3813,
+      "path": "./photos/Charleston by Drone/FullSizeRender(2).jpg",
+      "compressed_path": "./photos/Charleston by Drone/FullSizeRender(2).min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/FullSizeRender(2).placeholder.jpg"
+    },
+    {
+      "width": 1728,
+      "height": 3467,
+      "path": "./photos/Charleston by Drone/FullSizeRender(3).jpg",
+      "compressed_path": "./photos/Charleston by Drone/FullSizeRender(3).min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/FullSizeRender(3).placeholder.jpg"
+    },
+    {
+      "width": 1862,
+      "height": 4056,
+      "path": "./photos/Charleston by Drone/FullSizeRender.jpg",
+      "compressed_path": "./photos/Charleston by Drone/FullSizeRender.min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/FullSizeRender.placeholder.jpg"
+    },
+    {
+      "width": 1389,
+      "height": 3182,
+      "path": "./photos/Charleston by Drone/pier.jpg",
+      "compressed_path": "./photos/Charleston by Drone/pier.min.jpg",
+      "compressed": false,
+      "placeholder_path": "./photos/Charleston by Drone/pier.placeholder.jpg"
+    }
+  ]
+}
