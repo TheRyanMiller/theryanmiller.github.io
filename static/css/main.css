@@ -105,7 +105,23 @@ a.nostyle:visited {
 
 /* Custom page CSS
 -------------------------------------------------- */
-
+.flexrow{
+  width: 10%;
+  max-width: 200px;
+  margin: auto 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.somespacing{
+  margin-right: 12px;
+  margin-left: 12px;
+}
+.socialwidth{
+  width: auto;
+  text-align: center
+}
 .container {
   width: auto;
   max-width: 800px;
@@ -146,6 +162,7 @@ a.nostyle:visited {
 .social {
   padding-top: 12px;
   word-spacing: 25px;
+  text-align: center;
 }
 .social h4 > a {
   color: #000000;
@@ -185,9 +202,3 @@ div.footer{
 a{
   color: #591977;
 }
-/* Set the fixed height of the footer here */
-/*.footer {
-  height: 50px;
-  padding-bottom: 15px;
-
-}*/
