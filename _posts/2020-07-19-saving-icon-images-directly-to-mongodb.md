@@ -16,7 +16,7 @@ But now that I have the icons on my filesystem, the logistics of actually using 
   
 This will certainly work, but is there a way we can make life a little easier? For example, is it possible instead to insert these icons into our MongoDB database in a way that they're associated with their cryptocurrency record and can be returned with the results of each query? 
 
-Well the answer is yes! So let's proThis would make it a one step process instead of multiple steps.
+Well the answer is yes!
 
 In this post I'll show you how I pulled this off (as you can see in the image below). We'll learn about the datatypes at play, how to write the image to MongoDB using Mongoose, and how to to read the image out of MongoDB. Let's go!
 

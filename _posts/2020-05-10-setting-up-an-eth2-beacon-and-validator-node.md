@@ -14,7 +14,7 @@ tags:
 ## Eth2 Staking procedure
 - Setup beacon node
 - Setup validator
-- Send 32 ETH t
+- Send 32 Goerli ETH to the designated staking contract
 
 ### Eth2 Beacon node setup
 

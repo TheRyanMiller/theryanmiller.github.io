@@ -32,13 +32,17 @@ a.nostyle:link {
   color: inherit;
 }
 
+.navbar-nav>li>a {
+  line-height: 15px;
+}
+
 a.nostyle:visited {
   text-decoration: inherit;
   color: inherit;
   cursor: auto;
 }
 .navbar-static-top {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 .navbar-default {
   background-color: #ffffff;
