@@ -9,10 +9,13 @@ tags:
 - Jest
 ---
 
-#
+# A Foray into Javascript Testing with Jest
 
-`npm i jest --save-dev` command to tell npm you just want this package to be used in DEV
-once jest is installed, use `npm test` to tet using jest
-naming convention is to name test files same as file you want tested. So for example, the test for `script.js` would be `script.test.js`
+*This blog post is incomplete. But I will be getting back to it soon!*
 
-in test file, import function you want to test 
+`npm i jest --save-dev` command to tell npm you just want this package to be used only in DEV
+once jest is installed  
+
+Naming convention for tests is to name the test file the same as file you want tested, but add a `.test.js` instead of simply `.js`. So for example, the test for `script.js` would be `script.test.js`   
+
+Use `npm test` to test using jest  

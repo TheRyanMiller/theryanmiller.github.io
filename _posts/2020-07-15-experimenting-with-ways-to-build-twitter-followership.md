@@ -8,8 +8,27 @@ tags:
 ---
 
 # Building a Twitter Followership
-Okay, so I built a Twitter bot and was feeling pretty good about myself. But despite how exciting it might've been for me to put it out into the wild for the world to see, it's debut landed with a thud: a very obvious "0" follower count. So how the heck do I get followers for this thing? I ended up posting a link to the bot on my Facebook, which got me up to 14 followers. ...but that stayed  stagnant on exactly 14 for at least a week.  
+Okay, so I built a Twitter bot and was feeling pretty good about myself. But despite how exciting it might've been for me to put it out into the wild for the world to see, it's debut landed with a thud: a very obvious "0" follower count. So how the heck do I get followers for this thing? 
+  
+Well, here's my plan.
+1. Post a link to my Facebook to see how much traction I can get from my own personal social network.
+1. Begin automatic monitoring of all Trump's tweets, and reply-tweet back to each one within the same minute
+1. Repeat step #2, but for high profile Trump-related accounts (e.g. Mike Pence, Joe Biden, etc)
+1. Repeat step #2, but for lower profile Trump-related accounts (the idea here is that my replies may be less drowned out than the replies in step 2)
 
-So what's next?  
+Once I get this all setup, I will let the bot do it's work while I have _yet another script_ tracking my own accounts followers. This script will simply check my follower account at midnight each morning so that I can plot it later on.  
+  
+Stay tuned for results.
 
-My next idea to build a followership is to actually extend the bot to be one that  
+## Update: 7/15/2020
+Results from step 1: A coupl weeks ago, I posted a link to my bot to my Facebook feed. Pretty much immediately I collected my first 14 total followers! Sadly, the number has not moved in almost 2 weeks.
+In the mean time, have gone ahead and developed the code needed to reply-tweet other accounts the same minute that they tweet out. I designed it in a way that I can keep a list of "targetted tweeters" that I can add/remove from at any time.  
+Just as an experiment I want to begin with _just_ Donald Trump and see what kind of performance I get after a week. 
+
+## Update:  7/22/2020
+A week has gone by of following just Donald Trump and I gained a few followers. Up from 14 to 22. I will now move on to step #3 of my experiment and add several new names to the list. I am trying to go for some folks that are pretty vocal about the president. Let's let this run for another week and see how it goes...
+* @realDonaldTrump
+* @gtconway3d
+* @DonaldJTrumpJr
+* @Susan_Hennessey
+* @SethAbramson
