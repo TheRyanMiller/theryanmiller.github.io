@@ -20,7 +20,7 @@ Well the answer is yes!
 
 In this post I'll show you how I pulled this off (as you can see in the image below). We'll learn about the datatypes at play, how to write the image to MongoDB using Mongoose, and how to to read the image out of MongoDB. Let's go!
 
-<div style="text-align:center"><img src="/static/img/blogimages/crypto-bot/icondemo.gif" /><p style="width:450px; text-align:center; margin: auto"><i>The icons rendered here are all rendered directly from storage in MongoDB</i></p></div><br />
+<div style="text-align:center"><img src="/static/img/blogimages/crypto-bot/icondemo.gif" /><p style="width:100%; text-align:center; margin: auto"><i>The icons rendered here are all rendered<br /> directly from storage in MongoDB</i></p></div><br />
 
 ## Operation sequence and file types
 The logo images we're working with happen to be in .png format, but really, it can be any. The goal is to convert the image into a format that can be saved to our database, then extracted and translated back into a .png later on.  
