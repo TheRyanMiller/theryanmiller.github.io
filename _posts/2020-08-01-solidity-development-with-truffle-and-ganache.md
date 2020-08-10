@@ -34,3 +34,6 @@ As an ethereum developer, we need several tools
 1. A test blockchain
 1. Tool to deploy smart contracts to the test blockchain
 1. Accounts and Ethereum to spend on the test blockchain
+
+#### 1) A test blockchain
+There are a couple tools we can use for the job here. The ones I've used before are Truffle, Ganache UI, and Ganache CLI.

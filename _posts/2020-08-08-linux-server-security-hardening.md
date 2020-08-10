@@ -43,9 +43,21 @@ Generate passwords randomly.
 - Avoid using information that is or might become publicly associated with the user or the account.
 - Avoid using information that the user’s colleagues or acquaintances might know to be associated with the user.
 - Do not use passwords that consist of weak components.
+
 ## SSH
+
+#### Changing default SSH Port
+When connected to the internet, a server is reachable by malicious actors online. Exposing your system's SSH access to them is dangerous, so one common strategy is to obfuscate your SSH access by changing the default SSH port on the syetem. Malicious scripts online frequently check port 22, but it is much less common for them to test every single port on every single machine, this would simply be impractical. For this reason, changing the default SSH port is a solid security measure. To do it, change edit the SSH config using this command:
+```
+vi /etc/ssh/sshd_config
+```
+Find the commented line that specifies `port: 22`, and uncommonent it, replacing it with your desired port (try not to use some variation of 22, e.g. 222 or 2222). Next ensure that you open this port in your firewall if not already (assume the new default ssh port is 1111).
+```
+ufw allow 1111/tcp
+```
+
+#### Generate an SSH key pair
 For a login method that is more secure than using a password, create an SSH key pair to use with the user that you previously created. These instructions work with any Linux distribution.
-### Generate an SSH key pair
 Run the following command to generate a key pair
 ```
 ssh-keygen -b 4096 -t rsa
@@ -61,4 +73,32 @@ cat .ssh/authorized_keys
 ```
 
 At this point, you have added ssh-key and password authentication for the user. The next section goes over optional steps on how to disable password authentication.
-## Password Strength
+
+## Firewalls
+On my Ubuntu server system, it's a smart idea to setup firewall rules. Firewall rules are applied to server ports. Each port can be opened or closed depending on whether you want traffic to flow through it, and each port can also enforce a set of rules (e.g. IP whitelists). Consider opening a port for applicatons like:
+- SSH
+- Web server
+- FTP  
+
+I'll be documenting firewall commands for Ubuntu [UFW](https://help.ubuntu.com/community/UFW).
+To turn UFW on with the default set of rules:
+```
+sudo ufw enable
+```
+To enable traffic to port 22 (common for SSH), use
+```
+ufw allow 22/tcp
+```
+To check the status of UFW:
+```
+sudo ufw status verbose
+```
+The output should be like this:
+```
+youruser@yourcomputer:~$ sudo ufw status verbose
+[sudo] password for youruser:
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing)
+New profiles: skip
+```
