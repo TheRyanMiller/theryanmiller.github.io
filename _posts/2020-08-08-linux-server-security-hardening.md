@@ -11,10 +11,19 @@ tags:
 
 # Linux Server Hardening Best Practices
 This article references many security hardening tips and best practices I've found online and wanted to compile in one place. References [here](https://support.rackspace.com/how-to/linux-server-security-best-practices/), and here.
+
 ## User Management
-By default, the root user is created as the first user on every Linux system. Since every Linux system has a root user, this is a universally known account to attack, especially against hackers who are trying to SSH into your server. Bad actors already know half the information they need (username) in order to access the most powerful account on the system.  
+
+#### Limit permissions of background programs by setting ownership
+Linux permissions are very useful to control the damage of hacks and misbehavior. For this reason we want to use dedicated users to run programs that operate in the background (daemons) and execute requests coming through the network or other communication means. For example, the database daemon mysqld runs as a dedicated user and group `mysql:mysql` and the data files of the database (`/var/lib/mysql/*`) belong to `mysql:mysql`.  
+Note that the daemon executable and other static data and configuration files that are used but should not be modified by the daemon must not belong to the dedicated user; they should be owned by `root:root`, like most program and configuration files. This will prevent an attacker from affecting the process itself and/or the configuration.  
+If you have a program that cannot be owned by root but must run with extra privileges, check [this answer](https://unix.stackexchange.com/a/29165) on Stack Exchange for a detailed explaination.
+
+#### Prevent `root` access to SSH
+One great example of a daemon to protect is SSH. By default, the root user is created as the first user on every Linux system. Since every Linux system has a root user, this is a universally known account to attack, especially against hackers who are trying to SSH into your server. Bad actors already know half the information they need (username) in order to access the most powerful account on the system.  
 For this reason we want to disable `root` access via Secure Shell (SSH).  
 In it's place, we'll want to create a secondary user with a different set of login credentials which will be used to access via SSH.
+
 ### Adding user
 For Debian and Ubuntu® operating systems, add a user by following these steps.
 Create a new user and set their password:

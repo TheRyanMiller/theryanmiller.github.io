@@ -39,13 +39,14 @@ Let's take a look at the code snippet below which can help explain some key func
 
 ```
   <Formik
-      initialValues={{
+      initialValues={% raw %}{{
         accountId: "123",
         firstName: "Ryan",
         lastName: "Miller",
         email: "example@example.com"
         balance: 100;
       }}
+      {% endraw %}
   >
   {({values, errors, handleChange})} =>	(
     <div>Content here.</div>
@@ -61,13 +62,13 @@ Let's say we want an input text box to control the first name and last name valu
 
 ```
 <Formik
-    initialValues={{
+    initialValues={% raw %}{{
       accountId: "123",
       firstName: "Ryan",
       lastName: "Miller",
       email: "example@example.com",
       balance: 100
-    }}
+    }}{% endraw %}
 	onSubmit={()=>handleSubmit()}
 	validate={(values)=>runValidationLogic()}
 >
