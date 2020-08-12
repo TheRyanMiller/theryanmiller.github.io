@@ -1,7 +1,6 @@
 /* Main page with stikky-footer
 -------------------------------------------------- */
 @import "pygments.css";
-html,
 /* Light mode */
 :root {
   --primary-color: #302AE6;
@@ -11,19 +10,21 @@ html,
   --heading-color: #292922;
   --border-color: #fff;
   --accent-color: #591977;
+  --icon-color: black;
 }
 /* Dark mode */
 [data-theme="dark"] {
-  --primary-color: #9A97F3;
+  --primary-color: #110cb4;
   --secondary-color: #818cab;
   --font-color: #e1e1ff;
-  --bg-color: #161625;
+  --bg-color: #242424;
   --heading-color: #818cab;
-  --border-color: #fff;
-  --accent-color: #591977;
+  --border-color: var(--bg-color);
+  --accent-color: #3f2275;
+  --link-color: #7e44eb;
+  --icon-color: #e1e1ff;
 }
-
-body {
+html,body {
   position: relative;
   height: 100%;
   background-color: var(--bg-color);
@@ -32,6 +33,11 @@ body {
   /* The html and body elements cannot have any padding or margin. */
   border-top: 3px solid var(--accent-color);
 }
+
+.fa {
+  color: var(--icon-color);
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
   padding-bottom: 50px;
@@ -129,17 +135,15 @@ a.nostyle:visited {
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-
-  em {
-    margin-left: 10px;
-    font-size: 1rem;
-  }
+  margin-left: 15px;
+  padding-top: 12px;
+  padding-bottom: 15px;
 }
 .theme-switch {
   display: inline-block;
-  height: 34px;
+  height: 18px;
   position: relative;
-  width: 60px;
+  width: 42px;
 }
 
 .theme-switch input {
@@ -159,17 +163,17 @@ a.nostyle:visited {
 
 .slider:before {
   background-color: #fff;
-  bottom: 4px;
+  bottom: 1px;
   content: "";
-  height: 26px;
-  left: 4px;
+  height: 15px;
+  left: 2px;
   position: absolute;
   transition: .4s;
-  width: 26px;
+  width: 15px;
 }
 
 input:checked + .slider {
-  background-color: #66bb6a;
+  background-color: var(--accent-color);
 }
 
 input:checked + .slider:before {
@@ -177,7 +181,7 @@ input:checked + .slider:before {
 }
 
 .slider.round {
-  border-radius: 34px;
+  border-radius: 25px;
 }
 
 .slider.round:before {
@@ -284,5 +288,5 @@ div.footer{
 }
 
 a{
-  color: var(--accent-color);
+  color: var(--link-color);
 }
