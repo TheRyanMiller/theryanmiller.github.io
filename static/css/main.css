@@ -9,6 +9,8 @@ html,
   --font-color: #424242;
   --bg-color: #fff;
   --heading-color: #292922;
+  --border-color: #fff;
+  --accent-color: #591977;
 }
 /* Dark mode */
 [data-theme="dark"] {
@@ -17,6 +19,8 @@ html,
   --font-color: #e1e1ff;
   --bg-color: #161625;
   --heading-color: #818cab;
+  --border-color: #fff;
+  --accent-color: #591977;
 }
 
 body {
@@ -26,7 +30,7 @@ body {
   color: var(--font-color);
   font-family: 'Source Sans Pro', sans-serif;
   /* The html and body elements cannot have any padding or margin. */
-  border-top: 3px solid #591977;
+  border-top: 3px solid var(--accent-color);
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -64,7 +68,7 @@ a.nostyle:visited {
 }
 .navbar-default {
   background-color: var(--bg-color);
-  border-color: rgb(7, 7, 7);
+  border-color: var(--border-color);
 }
 .navbar-default .navbar-brand {
   color: var(--font-color);
@@ -270,14 +274,15 @@ input:checked + .slider:before {
 
 .footer {
   text-decoration: none !important;
+  
 }
 .text-muted {
 	color: var(--font-color);
 }
 div.footer{
-  border-bottom: 5px solid #591977;
+  border-bottom: 5px solid var(--accent-color);
 }
 
 a{
-  color: #591977;
+  color: var(--accent-color);
 }
