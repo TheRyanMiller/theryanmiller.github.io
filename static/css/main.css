@@ -280,8 +280,8 @@ input:checked + .slider:before {
 -------------------------------------------------- */
 
 .footer {
+  display: block;
   text-decoration: none !important;
-  
 }
 .text-muted {
 	color: var(--font-color);
@@ -289,7 +289,9 @@ input:checked + .slider:before {
 div.footer{
   border-bottom: 5px solid var(--accent-color);
 }
-
+footer{
+  height:50px;
+}
 a{
   color: var(--link-color);
 }
@@ -301,13 +303,14 @@ a{
 .footer-row{
   display: flex;
   width: 100%;
+  height: 100%;
+  margin-top: 15px;
 }
 .footer-left{
   flex: 50%;
   align-items: center;
   margin-left: 15px;
   padding-top: 12px;
-  padding-bottom: 15px;
 }
 .footer-right{
   flex: 50%;
@@ -316,5 +319,7 @@ a{
 .footer-right div{
   flex: 50%;
   float: right;
-  
+}
+.testing{
+  padding-top: 10px;
 }
