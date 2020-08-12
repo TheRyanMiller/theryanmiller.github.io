@@ -297,3 +297,24 @@ a{
 .label-info{
   background-color: var(--accent-secondary-color);
 }
+
+.footer-row{
+  display: flex;
+  width: 100%;
+}
+.footer-left{
+  flex: 50%;
+  align-items: center;
+  margin-left: 15px;
+  padding-top: 12px;
+  padding-bottom: 15px;
+}
+.footer-right{
+  flex: 50%;
+  margin-right: 30px;
+}
+.footer-right div{
+  flex: 50%;
+  float: right;
+  
+}
