@@ -279,6 +279,9 @@ input:checked + .slider:before {
 /* Footer
 -------------------------------------------------- */
 
+footer{
+  height:40px;
+}
 .footer {
   display: block;
   text-decoration: none !important;
@@ -289,9 +292,7 @@ input:checked + .slider:before {
 div.footer{
   border-bottom: 5px solid var(--accent-color);
 }
-footer{
-  height:50px;
-}
+
 a{
   color: var(--link-color);
 }
@@ -321,5 +322,6 @@ a{
   float: right;
 }
 .testing{
-  padding-top: 10px;
+  padding-top: 5px;
+  width: 100%;
 }
