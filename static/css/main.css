@@ -11,6 +11,8 @@
   --border-color: #fff;
   --accent-color: #591977;
   --icon-color: black;
+  --link-color: #591977;
+  --accent-secondary-color: #502c92;
 }
 /* Dark mode */
 [data-theme="dark"] {
@@ -23,6 +25,7 @@
   --accent-color: #3f2275;
   --link-color: #7e44eb;
   --icon-color: #e1e1ff;
+  --accent-secondary-color: #502c92;
 }
 html,body {
   position: relative;
@@ -289,4 +292,8 @@ div.footer{
 
 a{
   color: var(--link-color);
+}
+
+.label-info{
+  background-color: var(--accent-secondary-color);
 }
