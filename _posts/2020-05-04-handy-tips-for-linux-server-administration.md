@@ -12,18 +12,21 @@ tags:
 
 ### Tips for Linux Server Administration
 I purchased a cheap refurbished Dell desktop recently to act as my home server - host my project apps, run CI/CD, and a database. This weekend I installed Ubuntu server on it, plugged in a hardwire connection to my router and fired her up.
-  
-This post
 
-Jenkins up and running
-install docker, 
-- add docker group
-- add jenkins user to group
+### System Resources and Processes
+##### View running processes
+```
+htop
+```
+##### View Processor Info
+```
+cat /proc/cpuinfo
+```
+##### View memory info
+```
+cat /proc/meminfo
+```
 
-Logging into the mongo shell
-```
-mongo -u ryan -p secretPassword 123.45.67.89/admin
-```
 ### Filesystem
 #### List available storage volumes
 Tree listing of available storage
@@ -73,3 +76,52 @@ now=$(date +"%m_%d_%Y")
 echo "Filename : /nas/backup_$now.sql"
 ```
 this will output as `Filename : /nas/backup_04_27_2010.sql`
+
+### Tmux
+#### Working with Panes
+Create a new pane to the right
+```
+Ctrl+b %
+```
+Create a new pane to the bottom
+```
+Ctrl+b "
+```
+Remove current pane
+```
+exit
+```
+Switch to left pane
+```
+Ctrl+b <-
+```
+Switch to right pane
+```
+Ctrl+b <-
+```
+#### Working with Windows
+Create a new window
+```
+Ctrl+b c
+```
+Switch to another window
+```
+Ctrl+b 0
+```
+#### Attaching and detaching
+Detach
+```
+Ctrl+b d
+```
+View running tmux sessions
+```
+tmux ls
+```
+Attach to session 0
+```
+tmux  attach -t 0
+```
+Rename session from `0` to `git`
+```
+tmux rename-session -t 0 git
+```
