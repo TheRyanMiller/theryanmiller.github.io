@@ -79,10 +79,10 @@ The line breaks and spacing here are important - otherwise mongo will not interp
 
 Woohoo! We're all configured! Now for our final act, we'll login. First, we'll try logging in with our limited account, so that we can see the effects. To do this we'll have to restart mongod if you haven't already - in order to pickup the new config.
   
-Next, we can login to our service account in one step by issuing the following command
+Next, we can login to our service account in one step by issuing the following command. Make sure to include `--authenticationatabase MyApp` segment which indicates that this particular user is authorized specifically in the MyApp database, and not globally.
 
 ```
-mongo -u myappuser -p password
+mongo -u myappuser -p password --authenticationDatabase MyApp
 ```
 We should now have a session started up successfully. We can validate our permissions by issuing a command we know should succeed and another that we expect should fail. For example:
 ```

@@ -32,3 +32,7 @@ A week has gone by of following just Donald Trump and I gained a few followers. 
 * @DonaldJTrumpJr
 * @Susan_Hennessey
 * @SethAbramson
+
+## Update:  10/28/2020
+Got some good news and some bad news. Good news: My bot lasted a couple weeks and gained up to 88 followers. Bad news: Twitter locked my bot account claiming that it was violating it's terms after making API calls ever minute or so, and replying so quickly to so many accounts.  
+On the bot itself, I built a simple switch to disable all the reply-tweet functionaly and return it back to a boring bot which just fills its own timeline with daily tweet. For now that'll be good enough :).
