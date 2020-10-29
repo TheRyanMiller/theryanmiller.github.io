@@ -6,6 +6,7 @@ body {
   margin: 0 auto;
   max-width: 1000px;
   width: 90%;
+  overflow-y: overlay;
 }
 
 .header {
