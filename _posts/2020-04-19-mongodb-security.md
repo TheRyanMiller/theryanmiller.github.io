@@ -112,7 +112,7 @@ Note that these *are not* the IPs of remote hosts, but rather the listening inte
 - 192.168.1.99 is the local IP of
 - 127.0.0.1 is the loopback address which will allow connections from our server itself
 In effect, this will allow any host who can speak to 192.168.1.99 interface (i.e. all other hosts on my LAN, for example 192.168.1.24, etc) to connect. However, it will not allow traffic from the broader internet to connect. If we wanted to allow that we could use either:
-- 0.0.0.0 as a an `allow-all` or
+- `0.0.0.0` which effectively is an allow-all
 - [insert public-facing internet IP, e.g. 44.45.66.18]  
 Assuming you've updated your config, the final thing we need to do now is restart your mongod service using the `sudo service restart mongod` command, to allow the service to pickup your new configuration.
 
