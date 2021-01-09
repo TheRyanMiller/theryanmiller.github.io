@@ -15,6 +15,9 @@ Andre and Yearn introduced a new product called "Vaults" to capitalize on this n
 ## Overview - What are Vaults
 With Vaults, Yearn has introducd the concept of "Strategies" which are contract-encoded processes which target yield farming opportunities and optimize the value extraction. Money deposited into the vault contract moves to the strategy contract to be "put to work".
 
+## Underlying
+
+
 ## Vaults - How is balance calculated
 
 Underlying x Price per share.
@@ -23,7 +26,6 @@ The vault implements the ERC20 yTokens contract while the strategy holds the bal
 ## Fees
 Current withdrawals are subject to 0.5% withdrawal fee. 
 5% performance fee on subsidized gas (only applied to delegated vaults on rebalace).
-Insurance
 
 ## Resources
 ![](../static/img/2020-12-13-10-55-00.png)
