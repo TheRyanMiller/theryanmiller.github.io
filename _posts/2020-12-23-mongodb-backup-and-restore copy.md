@@ -37,6 +37,7 @@ The `mongorestore` utility connects to a locally running `mongod` and can restor
 `mongorestore` can create a new database or add data to an existing database. However, mongorestore performs inserts only and does not perform updates. That is, if restoring documents to an existing database and collection and existing documents have the same value _id field as the to-be-restored documents, mongorestore will not overwrite those documents.
 
 You must use the `--db` option to specify the database name to restore into if you are restoring a single BSON file. The /database specified in the connection string will only be used as the authentication database in this case.
+You must use the `--db` option to specify the database name to restore into if you are restoring a single BSON file. The /database specified in the connection string will only be used as the authentication database in this case.
 
 Of course, `mongorestore` can also be run on a remote host via  
 ```

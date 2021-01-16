@@ -12,7 +12,8 @@ tags:
 I've been doing a lot of contract deep dives lately and learned some tricks that have helped me become more efficient. This post is intended to share those tips.
 
 ## Reading a contract
-Etherscan provides contract code to any smart contract who's developer imports the verified codebase. In the spirit of open source, it is convention for all developers to verify their source code, and I would suggest against engaging with contracts that have not verified their code.
+Etherscan provides contract code to any smart contract who's developer imports the verified codebase. In the spirit of open source, it is convention for all developers to verify their source code, and I would suggest against engaging with contracts that have not verified their code.  
+Each contract address 
 
 https://etherscan.io/address/0xd42ec70a590c6bc11e9995314fdba45b4f74fabb/advanced#code
 
