@@ -91,6 +91,7 @@ An alternative way of interacting with our node is to use a web3 package in a cu
 Once you get the package installed via your package manager and open a new script, we'll first have to import/require web3, and then feed it a connection to a "provider". A provider basically refers to the geth node we started up in the above steps. We have the option to connect via http or websocket, and for this demo I'll be showing http. 
   
 Below is an example script of how we might write a interact with our geth node. This simple script will show us the balance of a common Ethereum burn address. Before executing it, make sure you've imported the web3 npm package and supplied the appropriate http URL and port.
+
 {% highlight javascript %}
 const Web3 = require("web3");
 const TxPool = require("web3-eth-txpool");

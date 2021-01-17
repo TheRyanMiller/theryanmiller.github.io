@@ -42,36 +42,47 @@ brownie console --network mainnet-fork
 ```
 You can now run some commands against a mainnet fork. Let's try it...  
   
-First, let me go ahead prove that this is a static copy of mainnet by checking the current block number at Etherscan.com against the block number that Brownie has snapshotted for use.  
-Etherscan.com shows a current block = `11668559`.  
-Now, by inputing this command, we can see which bock our Brownie snapshot is on: 
+First, let me go ahead prove that this is a static copy of mainnet by checking the current block number at Etherscan.io against the block number that Brownie has snapshotted for use.  
+Etherscan shows a current block = `11668559`.  
+Now to check our snapshot's block, we can run the following web3 command: 
 ```
 web3.eth.blockNumber
 ```
+Which gives me the following result:  
+  
 ![](../static/img/2021-01-16-15-59-58.png)  
 
 Here we see the block number of our snapshot is at `11668544`, which as expected, is behind the real mainnet block, proving that our snapshot of a past point in time worked. We can now use this snapshot as a test area for our code and contracts.  
 
 ### Some other Brownie Cool-ness  
 
-Now Let's try to query a real-life contract from mainnet using this fork we've created. The following lines will query a Chainlink contract which outputs the current price of Ethereum.
-```
+Now Let's try to query a real-life contract from mainnet using this fork we've created. The following lines will query a Chainlink contract which outputs the current price of Ethereum.  
+
+{% highlight javascript %}
 ethPriceContractAddress = "0xf79d6afbb6da890132f9d7c355e3015f15f3406f"
 oracle = Contract.from_explorer(ethPriceContractAddress)
-oracle.latestAnswer()
-```
-You might ask how we pulled this off this `.latestAnswer()` method call by name without an ABI. The answer lies within the second line where we run a little Brownie magic:
-```
+oracle.latestAnswer()  
+{% endhighlight %}  
+
+You might ask how we pulled this off this `.latestAnswer()` method call by name without an ABI. The answer lies within the second line where we run a little Brownie magic:  
+
+{% highlight javascript %}
 Contract.from_explorer(address, as_proxy_for=None, owner=None)
-```
+{% endhighlight %}  
+
 [Contract.from_explorer](https://eth-brownie.readthedocs.io/en/stable/api-network.html#Contract.from_explorer) is a built-in Brownie function which grabs the ABI from Etherscan and applies it to our contract instance `oracle`. Of course this is only possible when the ABI is available in Etherscan.
   
-Shall we see another cool Brownie trick? How could would it be to explore the documented input and return parameters for a method? Well, for any Etherscan-verified contract that implements [NatSpec Format](https://docs.soliditylang.org/en/latest/natspec-format.html), we can do this with a quick command. Let's try this on the following Yearn vault strategy: `StrategystETHCurve`:
-```
+Shall we see another cool Brownie trick? How could would it be to explore the documented input and return parameters for a method? Well, for any Etherscan-verified contract that implements [NatSpec Format](https://docs.soliditylang.org/en/latest/natspec-format.html), we can do this with a quick command. Let's try this on the following Yearn vault strategy: `StrategystETHCurve`:  
+
+{% highlight javascript %}
 StrategystETHCurve = Contract.from_explorer("0xCa8C5e51e235EF1018B2488e4e78e9205064D736")
 StrategystETHCurve.harvest.info()
-```
-![](../static/img/2021-01-16-16-35-33.png)  
+{% endhighlight %}  
+  
+
+Which gives the following result:  
+  
+![](../static/img/2021-01-16-16-35-33.png)
 
 Here we are exploring the developer documentation for the `.harvest()`, method, but we can actually replace that with any other method inside this contract, or even on the contract itself to return the docs.
 
