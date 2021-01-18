@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Testing and Deploying a Yearn Strategy with Brownie (pt. 3)
+title: Testing Smart Contracts with Brownie (pt. 3)
 author: Ryan Miller
 comments: true
 tags:
@@ -9,40 +9,73 @@ tags:
 ---
 
 # Overview
-This post is the 3rd in a three part series for getting started with Brownie and d
+This post is the 3rd in a three part series for getting started with Brownie. We've covered installation, project creation, and deployments with basic testing from the console. But now we're going to level up the testing to make sure we know exactly how our contract is behaving, and what is happening.
 
-### Requirements
-To properly follow along with this post yourself:
-- Make sure you've read the [first post] in this series and have installed all the pre-requisites(./setting-up-smart-contract-development-environment.html) in this series.
-- Install the official yearn-strategy Brownie mix with `brownie bake yearn-strategy`
+## Local Node vs Infura
+If you have a local or networked Geth node, you might see some nice performance gains over using the default Infura.
+To configure usage of a local Geth node, you have two options. 
 
-# Brownie Usage
-In [my last blog post](https://theryanmiller.com/setting-up-smart-contract-development-environment.html), I walked through what Brownie is, installation, and a basic compilation of a smart contract. In this post, we'll go a few steps further and learn about accounts, contract deployment, and testing with transactions after deployment.
-
-## Accounts setup
-Brownie allows us to manage Ethereum accounts we'll be using to interact with our testnet on our local machine. The following command will generate a local json keystore at `~/.brownie/accounts/dev.json` which stores our accounts
+1. Run the following command from the terminal, replacing IP addresses and ports where necessary (where `host` and `port` is where you want the fork to be served from, and `fork` is the local or remote node running Geth):
 ```
-brownie accounts generate dev
+brownie networks add development geth-node host="http://127.0.0.1" name="Ganache-CLI (Geth Mainnet Fork)" cmd="ganache-cli" explorer="https://api.etherscan.io/api" port=8545 gas_limit=10000000 mnemonic="brownie" fork="http://192.168.1.100:8545"
 ```
-In this scenario, we use `dev` as the account alias because it is used in the default scripts provided by the Yearn Strategy Brownie Mix I'm using. But really, the alias can be set to anything (just know it will be used to name the file in the Brownie accounts directory).
-After issuing this command, input a passphrase that will be used to unlock the keystore. A recovery mnemonic will be generated to keep if recovery is needed for any reason.  
-That's it on accounts for now. More information can be found [here](https://eth-brownie.readthedocs.io/en/stable/account-management.html).
+Or, alternatively, you may add directly to your `~/.brownie/network-config.yaml`
 
-## Deployment Scripts
-Deployment scripts are a simple, and effective way to interact with your contracts using Brownie. Scripts are extremely useful for deployment of contracts (to mainnet or testnet) and for automating processes.  
-With Brownie, scripts must be stored in the `scripts/` directory. You can run scripts in two ways:  
-- From your shell with `brownie run <script>`
-- From console with `>>> run('script')`
+```
+- name: Ganache-CLI (Geth Mainnet Fork)
+  id: geth-node   
+  host: http://127.0.0.1
+  explorer: https://api.etherscan.io/api
+  cmd: ganache-cli
+  cmd_settings:
+    fork: http://192.168.1.100:8545
+    gas_limit: 10000000
+    port: 8545
+    accounts: 10
+    mnemonic: brownie
+```
+Now, we can run our Brownie console on the forked blockchain using the command:
+```
+brownie console --network geth-node
+```
+Or run our tests using:
+```
+brownie test --network geth-node
+```
 
-Let's try a sample script. Here is a sample
+# Setting up tests in Brownie
+
+There's a lot to know about testing. First it should be known that Brownie uses `pytest`, and familiarity with it will help greatly.  
+To follow-on after part 2 from this series, let's take a look at the tests used for the token contract, and create some new ones for our `UniBless.sol` contract. All tests should always be stored in the `tests/` direcotry at the project root, and that's where you'll find a handful of test files for our token project.  
+
+![](../static/img/2021-01-19-23-40-14.png)  
+
+Notice the names of these files. All tests must begin or end with `test_` / `_test.py` in the files name. The one additional file in there, `conftest.py` is a configurtaion file that will help us perform some setup tasks, or "[fixtures](https://eth-brownie.readthedocs.io/en/v1.0.1/tests.html#brownie-pytest-fixtures)" before running our tests - things like deploying contracts.
+
+### Fixtures
+When testing in Python, it is extremely useful to perform some one-time setup prior to test execution. A classic way of doing this in pytest would be to implement `setup_module()` and `teardown_module()` methods. This runs some code at the beginning and end of test execution, and is where you'd want to place any code needed for all tests, but want to eliminate code repitition.
+But putting aside the setup/teardown, we'll actually be using fixtures instead. Fixtures is a pytest concept, and refers to code that allows you to:
+> Provide a fixed baseline so that tests execute reliably and produce consistent, repeatable, results. Initialization may setup services, state, or other operating environments. These are accessed by test functions through arguments; for each fixture used by a test function there is typically a parameter (named after the fixture) in the test function’s definition.
+
+With fixtures, we can do the same one-time setup at the beginning. To do this we
 {% highlight python %}
-from brownie import *
+@pytest.fixture(scope="function", autouse=True)
+def isolate(fn_isolation):
+    # perform a chain rewind after completing each test, to ensure proper isolation
+    # https://eth-brownie.readthedocs.io/en/v1.10.3/tests-pytest-intro.html#isolation-fixtures
+    pass
 
-def main():
-    #accounts[0].deploy(Token, "Test Token", "TEST", 18, "1000 ether")
-    accounts[0].deploy(Token, "Test Token", "TEST", 18, "1000 ether")
-{% endhighlight %}
+@pytest.fixture(scope="module")
+def token(Token, accounts):
+    return Token.deploy("Test Token", "TST", 18, 1e21, {'from': accounts[0]})
 
-The default deployment script will interact with the Yearn registry. But we'll use another 
+@pytest.fixture(scope="module")
+def uniBless(UniBless, accounts):
+    return UniBless.deploy({'from': accounts[0]})
+{% endhighlight %}  
 
-More information on deploying with Brownie is [here](https://eth-brownie.readthedocs.io/en/v1.3.0/deploy.html).
+
+Printing output text on tests
+Can have many asserts for one test
+If assert fails, output text is printed out to syslog
+Pytest shows warnings
