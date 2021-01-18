@@ -18,7 +18,7 @@ We'll spend some time learning about:
 
 ## Requirements
 To properly follow along with this post yourself:
-- Make sure you've read the [first post] in this series and have installed all the pre-requisites(./setting-up-smart-contract-development-environment.html) in this series.
+- Make sure you've read the [first post](./setting-up-smart-contract-development-environment.html) in this series and have installed all the pre-requisites in this series.
 - Install the sample Brownie mix called "[token]([token](https://github.com/brownie-mix/token-mix))" with `brownie bake token`
 
 # Accounts
