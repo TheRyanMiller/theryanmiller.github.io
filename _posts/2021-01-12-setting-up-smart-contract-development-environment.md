@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Setting up a Smart Contract Development Environment with Brownie
+title: Setting up a Smart Contract Development Environment with Brownie (pt. 1)
 author: Ryan Miller
 comments: true
 tags:
-- DeFi
-- Yearn Vaults
+- Brownie
+- Solidity
 ---
 
 # Overview
