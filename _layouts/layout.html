@@ -88,6 +88,18 @@
                 });
             });
 
+            // Close mobile nav when clicking outside
+            document.addEventListener('click', function(e) {
+                const navbar = document.querySelector('.navbar');
+                const collapse = document.querySelector('.navbar-collapse');
+                if (!navbar || !collapse) return;
+                if (!collapse.classList.contains('in')) return;
+                if (navbar.contains(e.target)) return;
+                if (window.jQuery && window.jQuery(collapse).collapse) {
+                    window.jQuery(collapse).collapse('hide');
+                }
+            });
+
             // Listen for system preference changes
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
                 if (!localStorage.getItem('theme')) {
