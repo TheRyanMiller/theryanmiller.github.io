@@ -1,8 +1,10 @@
 /* Main page with stikky-footer
 -------------------------------------------------- */
 @import "pygments.css";
+@import url(//fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,700);
 /* Light mode */
 :root {
+  --content-max-width: 960px;
   --primary-color: #302AE6;
   --secondary-color: #536390;
   --font-color: #424242;
@@ -28,8 +30,12 @@
   --accent-secondary-color: #502c92;
 }
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 html,body {
-  overflow-y: overlay;
   position: relative;
   height: 100%;
   background-color: var(--bg-color);
@@ -79,12 +85,32 @@ a.nostyle:visited {
   margin-bottom: 7px;
 }
 .navbar-default {
-  background-color: var(--bg-color);
-  border-color: var(--border-color);
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  border-width: 0;
   font-size: 14px;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+  box-shadow: none;
+}
+.navbar {
+  width: 100%;
+}
+.navbar .container {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 .navbar-default .navbar-brand {
   color: var(--font-color);
+}
+.navbar-header {
+  padding-left: 20px;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: var(--font-color);
@@ -108,10 +134,17 @@ a.nostyle:visited {
   background-color: #ffffff;
 }
 .navbar-default .navbar-toggle {
-  border-color: #ffffff;
+  border-color: transparent;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #ffffff;
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: var(--font-color);
@@ -139,61 +172,103 @@ a.nostyle:visited {
   }
 }
 
-/*Simple css to style Dark Mode toggle switch*/
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
-  padding-top: 12px;
-  padding-bottom: 15px;
-}
-.theme-switch {
-  display: inline-block;
-  height: 18px;
-  position: relative;
-  width: 42px;
-}
-
-.theme-switch input {
-  display:none;
-}
-
-.slider {
-  background-color: #ccc;
-  bottom: 0;
+/* Theme toggle icon */
+.theme-toggle {
   cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
+}
+.theme-toggle i {
+  font-size: 1.1em;
+}
+.theme-toggle:focus,
+.theme-toggle:active,
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
-.slider:before {
-  background-color: #fff;
-  bottom: 1px;
-  content: "";
-  height: 15px;
-  left: 2px;
-  position: absolute;
-  transition: .4s;
-  width: 15px;
+.navbar-mobile-controls {
+  display: none;
 }
 
-input:checked + .slider {
-  background-color: var(--link-color);
+@media (max-width: 767px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar-header {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .navbar-mobile-controls {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-right: -12px;
+  }
+
+  .navbar-mobile-controls .navbar-toggle {
+    margin-left: 6px;
+    margin-right: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .navbar-mobile-controls .navbar-toggle:hover,
+  .navbar-mobile-controls .navbar-toggle:focus {
+    background: transparent;
+  }
+
+  .navbar-theme-toggle {
+    display: none;
+  }
+
+  .navbar.navbar-default .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    left: auto;
+    z-index: 1000;
+    width: 168px;
+    background: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 4px 0;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 150ms ease, transform 150ms ease;
+  }
+
+  .navbar.navbar-default .navbar-collapse.collapse {
+    display: none;
+  }
+
+  .navbar.navbar-default .navbar-collapse.collapse.in {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar.navbar-default .navbar-collapse.collapsing {
+    height: auto;
+    transition: none;
+  }
+
+  .navbar.navbar-default .navbar-collapse .navbar-nav {
+    margin: 0;
+  }
+
+  .navbar.navbar-default .navbar-collapse .navbar-nav > li > a {
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 25px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+[data-theme="dark"] .navbar.navbar-default .navbar-collapse {
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 /* Custom page CSS
@@ -293,8 +368,10 @@ a:hover {
 /* Footer
 -------------------------------------------------- */
 
-footer{
-  height:40px;
+footer {
+  height: 40px;
+  padding-top: 15px;
+  text-align: center;
 }
 .footer {
   display: block;
@@ -315,26 +392,6 @@ a{
   background-color: var(--link-color);;
 }
 
-.footer-row{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin-top: 15px;
-}
-.footer-left{
-  flex: 50%;
-  align-items: center;
-  margin-left: 15px;
-  padding-top: 12px;
-}
-.footer-right{
-  flex: 50%;
-  margin-right: 30px;
-}
-.footer-right div{
-  flex: 50%;
-  float: right;
-}
 .testing{
   padding-top: 5px;
   width: 100%;
@@ -390,4 +447,348 @@ img.zoom-img {
 .zoom-overlay-open,
 .zoom-overlay-transitioning {
   cursor: default;
+}
+
+/* Archive section arrow */
+.archive-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+details[open] .archive-arrow {
+  transform: rotate(90deg);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Resume page styles - exact match to original
+-------------------------------------------------- */
+
+/* Resume resets margin/padding like original base.css */
+.resume-page,
+.resume-page :where(div, span, h1, p, a, address, article, header, section, time) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* Body styles from original */
+.resume-page {
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: #424242;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+[data-theme="dark"] .resume-page {
+  color: #d6d6d6;
+}
+
+/* Links - exact match to original layout.css */
+.resume-page a {
+  text-decoration: none;
+  color: #424242;
+  background-color: #eaeaea;
+}
+
+.resume-page a:visited {
+  color: #424242;
+}
+
+.resume-page a:hover,
+.resume-page a:focus {
+  color: #591977;
+}
+
+[data-theme="dark"] .resume-page a {
+  color: #d6d6d6;
+  background-color: #333333;
+}
+
+[data-theme="dark"] .resume-page a:visited {
+  color: #d6d6d6;
+}
+
+[data-theme="dark"] .resume-page a:hover,
+[data-theme="dark"] .resume-page a:focus {
+  color: #7e44eb;
+}
+
+/* p and address have no margin in original */
+.resume-page p,
+.resume-page address {
+  margin-bottom: 0;
+}
+
+.resume-container {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.resume-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.resume-sidebar {
+  width: 160px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.resume-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Photo - matches .me class in original */
+.resume-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+/* Sidebar name - header > h1 in original */
+.resume-name {
+  font-family: "Oswald", "Georgia", "Times New Roman", serif;
+  font-size: 350%;
+  font-weight: 400;
+  color: #591977;
+  margin-bottom: 20px;
+}
+
+[data-theme="dark"] .resume-name {
+  color: #7e44eb;
+}
+
+/* Sidebar contact info */
+.resume-sidebar p,
+.resume-sidebar address {
+  margin-bottom: 8px;
+  font-style: normal;
+}
+
+.resume-sidebar p:last-child {
+  margin-bottom: 20px;
+}
+
+/* Photo link - uses navbar-link style (no highlight) */
+.resume-page .resume-sidebar .center a {
+  background-color: var(--bg-color);
+}
+
+/* Section titles - section > h1 in original */
+.resume-section-title {
+  font-family: "Oswald", "Georgia", "Times New Roman", serif;
+  font-size: 140%;
+  line-height: 120%;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #591977;
+  margin-bottom: 10px;
+}
+
+[data-theme="dark"] .resume-section-title {
+  color: #7e44eb;
+}
+
+/* Article - matches original */
+.resume-item {
+  margin-bottom: 20px;
+}
+
+/* Job titles - article > header > h1 in original */
+.resume-item-title {
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 112%;
+  font-weight: bold;
+  line-height: 150%;
+  margin-bottom: 0;
+  color: inherit;
+}
+
+/* Company span - first span, no prefix */
+.resume-company {
+  font-size: 100%;
+}
+
+/* Meta span - second span, gets @ prefix */
+.resume-meta {
+  margin-left: 2px;
+  font-size: 100%;
+}
+
+.resume-meta::before {
+  content: '@';
+  margin-right: 4px;
+}
+
+/* In dark mode, spans use font2-color */
+[data-theme="dark"] .resume-company,
+[data-theme="dark"] .resume-meta {
+  color: rgb(168, 168, 168);
+}
+
+/* Links in spans inherit color but keep background highlight */
+.resume-page .resume-company a,
+.resume-page .resume-meta a {
+  color: inherit;
+}
+
+.resume-page .resume-company a:hover,
+.resume-page .resume-meta a:hover {
+  color: #591977;
+}
+
+[data-theme="dark"] .resume-page .resume-company a:hover,
+[data-theme="dark"] .resume-page .resume-meta a:hover {
+  color: #7e44eb;
+}
+
+/* Address and time in meta */
+.resume-meta address {
+  display: inline;
+  font-style: normal;
+}
+
+.resume-meta address + time {
+  margin-left: 6px;
+}
+
+.resume-meta address + time::before {
+  content: '—';
+  margin-right: 6px;
+}
+
+/* Paragraphs in resume items */
+.resume-item p {
+  margin-bottom: 0;
+  line-height: 21px;
+}
+
+/* Tech stack - matches em styling in original */
+.resume-tech {
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(100, 100, 100);
+  margin-right: 6px;
+}
+
+[data-theme="dark"] .resume-tech {
+  color: rgb(180, 180, 180);
+}
+
+.resume-content section {
+  margin-bottom: 35px;
+}
+
+/* Font Awesome icons */
+.resume-page .fa {
+  color: black;
+}
+
+[data-theme="dark"] .resume-page .fa {
+  color: #e1e1ff;
+}
+
+/* Tablet (768px - 959px) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .resume-container {
+    padding-left: 60px;
+    padding-right: 40px;
+  }
+
+  .resume-sidebar {
+    width: 160px;
+    margin-right: 40px;
+  }
+
+  .resume-name {
+    font-size: 280%;
+  }
+}
+
+/* Mobile (max 767px) */
+@media only screen and (max-width: 767px) {
+  .resume-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .resume-row {
+    flex-direction: column;
+  }
+
+  .resume-sidebar {
+    width: 100%;
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+
+  .resume-content {
+    width: 100%;
+  }
+
+  .resume-name {
+    font-size: 250%;
+  }
+
+  .resume-section-title {
+    font-size: 120%;
+  }
+
+  .resume-item-title {
+    font-size: 105%;
+    line-height: 140%;
+  }
+
+  .resume-item {
+    margin-bottom: 22px;
+  }
+}
+
+/* Mobile landscape (480px - 767px) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .resume-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media print {
+  .navbar, footer {
+    display: none !important;
+  }
+
+  .resume-page {
+    font-size: 14pt;
+    line-height: 21pt;
+  }
+
+  .resume-sidebar {
+    font-size: 80%;
+    line-height: 160%;
+  }
+
+  .resume-company,
+  .resume-meta {
+    font-size: 80%;
+    line-height: 80%;
+  }
 }

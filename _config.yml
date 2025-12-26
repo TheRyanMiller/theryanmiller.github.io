@@ -16,8 +16,8 @@ safe: true
 
 
 # edit here to achieve your personal greatness
-url: http://theryanmiller.github.io/
-basurl: /
+url: https://theryanmiller.com
+baseurl: ""
 title: Ryan Miller
 author: Ryan Miller
 description: Personal blog and resume
@@ -25,5 +25,5 @@ avatar: headshot2.jpg
 email: rmiller07@gmail.com
 github: theryanmiller
 twitter: real_mills
-google_analytics: UA-89475228-1
+google_analytics: G-VSMQLWD6CV
 

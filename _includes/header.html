@@ -2,14 +2,25 @@
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
+      <div class="navbar-mobile-controls" aria-label="Mobile navigation controls">
+        <a class="navbar-toggle theme-toggle" href="#" aria-label="Toggle dark mode">
+          <i class="fa fa-moon-o"></i>
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
     </div>
-    <div id="navbar">
+    <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ site.baseurl }} about.html">ABOUT</a></li>
         <li><a href="{{ site.baseurl }} blog.html">BLOG</a></li>
         <li><a href="{{ site.baseurl }} projects.html">PROJECTS</a></li>
         <li><a href="{{ site.baseurl }} photography.html">PHOTOGRAPHY</a></li>
-        <li><a href="https://theryanmiller.github.io/resume">RESUME</a></li>
+        <li><a href="{{ site.baseurl }}resume.html">RESUME</a></li>
       </ul>
     </div>
   </div>
