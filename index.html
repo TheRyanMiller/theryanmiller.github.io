@@ -1,18 +1,12 @@
 ---
-layout: home
+layout: layout
 title: Ryan Miller
 ---
 
-<section id="about">
-	<div class="container centered">
-	  <div class="avatar">
-		<img class="img-circle" width="200" height="200" 
-			src="{{ site.baseurl }}static/img/{{ site.avatar }}" alt="">
-	  </div>
-	  <h3>Hi I'm <strong>Ryan Miller 👋</strong></h3>
-	  <h3>Have a look at my <a href="{{ site.baseurl }} blog.html"> blog</a> or my professional <a href="http://theryanmiller.github.io/resume">resume</a>.</h3>
-	  <br />
-	  {% include social.html %}
-	  <br /> 
-	</div>
+<section class="home-intro">
+  <h1>hi, i’m ryan.</h1>
+  <p class="lede">I’m a software engineer interested in secure systems, infrastructure, and useful tools. This is where I keep notes on things I build and learn.</p>
+  <div class="inline-links" aria-label="Ryan's profiles">
+    <a href="https://github.com/{{ site.github }}">github ↗</a>
+  </div>
 </section>

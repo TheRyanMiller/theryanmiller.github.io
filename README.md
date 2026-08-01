@@ -1,8 +1,10 @@
-#### My personal blog and resume
+# theryanmiller.com
 
-This is my personal website. See it live at [TheRyanMiller.com](https://TheRyanMiller.com)
-  
-Powered by [jekyll](http://jekyllrb.com/), [github pages](https://pages.github.com/) and [sustain](https://github.com/biomadeira/sustain).
+Ryan Miller's personal site, built with Jekyll and hosted by GitHub Pages.
 
-- Ensure gem and jekyll are install
-- If no gem file, create it with `bundle init` and then `bundle install`
+## Local development
+
+```sh
+bundle install
+bundle exec jekyll serve
+```

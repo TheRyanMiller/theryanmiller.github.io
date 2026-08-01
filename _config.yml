@@ -1,29 +1,20 @@
-# top level stuff you probably don't need to touch
-#highlighter: pygments
-highlighter: rouge
-kramdown:
-  input: GFM
-markdown: kramdown
-extensions: [smart]
-permalink: /:title.html
-_yaml_mode: loose
-_content_type: markdown
-_markdown_parser: parsedown
-#paginate: 5
-port: 5000
-safe: true
-
-
-
-# edit here to achieve your personal greatness
 url: https://theryanmiller.com
 baseurl: ""
 title: Ryan Miller
 author: Ryan Miller
-description: Personal blog and resume
-avatar: headshot2.jpg
-email: rmiller07@gmail.com
+description: Notes on software, systems, security, and things Ryan Miller builds.
 github: theryanmiller
-twitter: real_mills
 google_analytics: G-VSMQLWD6CV
 
+permalink: /:title.html
+markdown: kramdown
+highlighter: rouge
+theme:
+kramdown:
+  input: GFM
+
+port: 5000
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

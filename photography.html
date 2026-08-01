@@ -1,6 +1,22 @@
 ---
-layout: page
+layout: layout
 title: Photography
 ---
 
-{% include photography.html %}
+<header class="page-heading">
+  <h1>photography</h1>
+  <p>Aerial photographs.</p>
+</header>
+
+<div class="photo-grid">
+  {% for photo in site.data.photos %}
+    <img
+      src="{{ photo.path | relative_url }}"
+      width="{{ photo.width }}"
+      height="{{ photo.height }}"
+      alt=""
+      decoding="async"
+      {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+    >
+  {% endfor %}
+</div>

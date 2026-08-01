@@ -1,0 +1,177 @@
+/*
+ * Rouge token mappings using GitHub's PrettyLights palette—the same color
+ * system used by Wavey Gist's Starry Night renderer.
+ */
+
+:root {
+  --syntax-default: #1f2328;
+  --syntax-muted: #59636e;
+  --syntax-comment: #59636e;
+  --syntax-constant: #0550ae;
+  --syntax-entity: #6639ba;
+  --syntax-tag: #0550ae;
+  --syntax-keyword: #cf222e;
+  --syntax-string: #0a3069;
+  --syntax-regexp: #116329;
+  --syntax-variable: #953800;
+  --syntax-danger: #82071e;
+  --syntax-danger-bg: #ffebe9;
+  --syntax-success: #116329;
+  --syntax-success-bg: #dafbe1;
+  --syntax-change: #953800;
+  --syntax-change-bg: #ffd8b5;
+  --syntax-heading: #0550ae;
+}
+
+[data-theme="dark"] {
+  --syntax-default: #f0f6fc;
+  --syntax-muted: #9198a1;
+  --syntax-comment: #9198a1;
+  --syntax-constant: #79c0ff;
+  --syntax-entity: #d2a8ff;
+  --syntax-tag: #7ee787;
+  --syntax-keyword: #ff7b72;
+  --syntax-string: #a5d6ff;
+  --syntax-regexp: #7ee787;
+  --syntax-variable: #ffa657;
+  --syntax-danger: #ffdcd7;
+  --syntax-danger-bg: #67060c;
+  --syntax-success: #aff5b4;
+  --syntax-success-bg: #033a16;
+  --syntax-change: #ffdfb6;
+  --syntax-change-bg: #5a1e02;
+  --syntax-heading: #1f6feb;
+}
+
+.highlight {
+  color: var(--syntax-default);
+}
+
+.highlight .c,
+.highlight .ch,
+.highlight .cd,
+.highlight .cm,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs {
+  color: var(--syntax-comment);
+  font-style: normal;
+}
+
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .kv,
+.highlight .ow {
+  color: var(--syntax-keyword);
+}
+
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .il,
+.highlight .mo,
+.highlight .mx,
+.highlight .no,
+.highlight .bp {
+  color: var(--syntax-constant);
+}
+
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .ss {
+  color: var(--syntax-string);
+}
+
+.highlight .sr {
+  color: var(--syntax-regexp);
+}
+
+.highlight .nc,
+.highlight .nd,
+.highlight .ne,
+.highlight .nf,
+.highlight .fm,
+.highlight .nn,
+.highlight .ni {
+  color: var(--syntax-entity);
+}
+
+.highlight .nt {
+  color: var(--syntax-tag);
+}
+
+.highlight .na,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .vm {
+  color: var(--syntax-variable);
+}
+
+.highlight .err,
+.highlight .gr,
+.highlight .gt {
+  color: var(--syntax-danger);
+}
+
+.highlight .err {
+  background: var(--syntax-danger-bg);
+}
+
+.highlight .gd {
+  color: var(--syntax-danger);
+  background: var(--syntax-danger-bg);
+}
+
+.highlight .gi {
+  color: var(--syntax-success);
+  background: var(--syntax-success-bg);
+}
+
+.highlight .gh,
+.highlight .gu {
+  color: var(--syntax-heading);
+  font-weight: 500;
+}
+
+.highlight .ge {
+  font-style: italic;
+}
+
+.highlight .gs {
+  font-weight: 500;
+}
+
+.highlight .go,
+.highlight .gp,
+.highlight .w {
+  color: var(--syntax-muted);
+}
+
+.highlight .o,
+.highlight .p,
+.highlight .n,
+.highlight .nb,
+.highlight .nl,
+.highlight .nx,
+.highlight .py {
+  color: var(--syntax-default);
+}
