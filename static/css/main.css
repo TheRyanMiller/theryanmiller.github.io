@@ -559,12 +559,15 @@ pre code,
 }
 
 .photo-grid__item {
+  appearance: none;
   display: block;
   width: 100%;
   margin: 0 0 10px;
   padding: 0;
   border: 0;
+  border-radius: 0;
   background: transparent;
+  box-shadow: none;
   break-inside: avoid;
   cursor: zoom-in;
 }
@@ -572,7 +575,6 @@ pre code,
 .photo-grid__item img {
   display: block;
   width: 100%;
-  border: 1px solid var(--divider);
   filter: saturate(0.88);
   transition: filter 200ms ease;
 }
