@@ -590,105 +590,31 @@ html.has-photo-lightbox {
 }
 
 .photo-lightbox {
-  width: calc(100vw - 32px);
-  max-width: 1480px;
-  height: calc(100dvh - 32px);
-  max-height: none;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
   margin: auto;
   padding: 0;
-  overflow: hidden;
-  border: 1px solid var(--divider-strong);
-  background: var(--background);
-  color: var(--primary);
+  overflow: visible;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: zoom-out;
 }
 
 .photo-lightbox::backdrop {
-  background: rgb(10 11 10 / 88%);
+  background: rgb(10 11 10 / 86%);
+  cursor: zoom-out;
 }
 
-.photo-lightbox__frame {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  height: 100%;
-}
-
-.photo-lightbox__toolbar {
-  display: flex;
-  min-height: 44px;
-  align-items: center;
-  gap: 18px;
-  padding-left: 14px;
-  border-bottom: 1px solid var(--divider);
-}
-
-.photo-lightbox__counter {
-  margin-right: auto;
-  color: var(--tertiary);
-  font-size: 11px;
-  font-variant-numeric: tabular-nums;
-}
-
-.photo-lightbox__original {
-  color: var(--secondary);
-  font-size: 11px;
-  text-decoration: none;
-}
-
-.photo-lightbox__original:hover {
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-.photo-lightbox__close,
-.photo-lightbox__nav {
-  border: 0;
-  background: transparent;
-  color: var(--secondary);
-  cursor: pointer;
-}
-
-.photo-lightbox__close:hover,
-.photo-lightbox__nav:hover {
-  color: var(--primary);
-}
-
-.photo-lightbox__close {
-  width: 44px;
-  align-self: stretch;
-  border-left: 1px solid var(--divider);
-  font-size: 19px;
-}
-
-.photo-lightbox__viewer {
-  display: grid;
-  min-width: 0;
-  min-height: 0;
-  grid-template-columns: 44px minmax(0, 1fr) 44px;
-  background: #0d0e0d;
-}
-
-.photo-lightbox__nav {
-  font-size: 19px;
-}
-
-.photo-lightbox__nav:disabled {
-  opacity: 0.25;
-  cursor: default;
-}
-
-.photo-lightbox__stage {
-  display: grid;
-  min-width: 0;
-  min-height: 0;
-  place-items: center;
-  overflow: hidden;
-}
-
-.photo-lightbox__stage img {
+.photo-lightbox img {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+  width: auto;
+  max-width: calc(100vw - 32px);
+  height: auto;
+  max-height: calc(100dvh - 32px);
   object-fit: contain;
+  cursor: default;
 }
 
 /* Error */
@@ -745,19 +671,6 @@ html.has-photo-lightbox {
     columns: 1;
   }
 
-  .photo-lightbox {
-    width: 100vw;
-    height: 100dvh;
-    border: 0;
-  }
-
-  .photo-lightbox__toolbar {
-    gap: 13px;
-  }
-
-  .photo-lightbox__viewer {
-    grid-template-columns: 36px minmax(0, 1fr) 36px;
-  }
 }
 
 @media print {
