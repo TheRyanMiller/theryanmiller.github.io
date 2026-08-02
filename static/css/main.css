@@ -9,7 +9,6 @@
   --divider: #dfe3e0;
   --divider-strong: #c5cbc7;
   --blue: #315fc6;
-  --green: #087b59;
   --code-background: #f6f8fa;
   --code-border: #d1d9e0;
   --code-inline-background: #818b981f;
@@ -28,7 +27,6 @@
   --divider: #2c302e;
   --divider-strong: #424844;
   --blue: #78a3ff;
-  --green: #55c79d;
   --code-background: #151b23;
   --code-border: #3d444d;
   --code-inline-background: #656c7633;
@@ -46,7 +44,6 @@ html {
   overflow-y: scroll;
   scrollbar-gutter: stable;
   background: var(--background);
-  border-top: 2px solid var(--blue);
 }
 
 body {
@@ -74,7 +71,7 @@ a {
 }
 
 a:hover {
-  color: var(--green);
+  color: var(--primary);
 }
 
 a:focus-visible,
@@ -100,7 +97,7 @@ b {
 
 .site-shell {
   width: min(100%, calc(var(--content-width) + (var(--page-padding) * 2)));
-  min-height: calc(100vh - 2px);
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0 var(--page-padding);
   display: flex;
@@ -185,23 +182,10 @@ b {
   border-bottom-color: var(--primary);
 }
 
-.theme-toggle::before {
-  content: "◐ ";
-  color: var(--green);
-}
-
 .site-rule {
   width: 100%;
   height: 1px;
   background: var(--divider);
-}
-
-.site-rule span {
-  display: block;
-  width: 32px;
-  height: 2px;
-  background: var(--green);
-  transform: translateY(-0.5px);
 }
 
 /* Shared type */
@@ -242,6 +226,10 @@ h6 {
   font-size: clamp(23px, 4vw, 30px);
   font-weight: 500;
   letter-spacing: -0.035em;
+}
+
+.page-heading h1:only-child {
+  margin-bottom: 0;
 }
 
 .page-heading > p:last-child {
@@ -327,7 +315,7 @@ h6 {
 }
 
 .post-row h2 a:hover::after {
-  color: var(--green);
+  color: var(--tertiary);
 }
 
 .post-tags {
@@ -410,7 +398,7 @@ h6 {
 
 .article-content h2::before {
   content: "# ";
-  color: var(--green);
+  color: var(--tertiary);
   font-weight: 400;
 }
 
@@ -441,13 +429,13 @@ h6 {
 }
 
 .article-content li::marker {
-  color: var(--green);
+  color: var(--tertiary);
 }
 
 .article-content blockquote {
   margin-left: 0;
   padding: 1px 0 1px 2ch;
-  border-left: 2px solid var(--green);
+  border-left: 2px solid var(--divider-strong);
   color: var(--secondary);
 }
 
@@ -518,7 +506,7 @@ pre code,
 
 .article-content .task-list-item input {
   margin: 0 0.7ch 0 -2.2ch;
-  accent-color: var(--green);
+  accent-color: var(--primary);
 }
 
 .article-content hr {
@@ -637,10 +625,6 @@ pre code,
     --primary: #000;
     --secondary: #333;
     --tertiary: #666;
-  }
-
-  html {
-    border: 0;
   }
 
   body {
