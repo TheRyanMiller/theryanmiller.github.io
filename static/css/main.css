@@ -182,6 +182,14 @@ b {
   border-bottom-color: var(--primary);
 }
 
+.theme-toggle {
+  display: inline-flex;
+  width: 1.5em;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
 .site-rule {
   width: 100%;
   height: 1px;
