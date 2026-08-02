@@ -8,15 +8,42 @@ title: Photography
   <p>Aerial photographs.</p>
 </header>
 
-<div class="photo-grid">
+<div class="photo-grid" data-photo-gallery>
   {% for photo in site.data.photos %}
-    <img
-      src="{{ photo.path | relative_url }}"
-      width="{{ photo.width }}"
-      height="{{ photo.height }}"
-      alt=""
-      decoding="async"
-      {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+    <button
+      class="photo-grid__item"
+      type="button"
+      data-photo-item
+      data-photo-src="{{ photo.path | relative_url }}"
+      aria-label="Open photo {{ forloop.index }} of {{ forloop.length }}"
     >
+      <img
+        src="{{ photo.path | relative_url }}"
+        width="{{ photo.width }}"
+        height="{{ photo.height }}"
+        alt=""
+        decoding="async"
+        {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+      >
+    </button>
   {% endfor %}
 </div>
+
+<dialog class="photo-lightbox" data-photo-lightbox aria-label="Photo viewer">
+  <div class="photo-lightbox__frame">
+    <div class="photo-lightbox__toolbar">
+      <span class="photo-lightbox__counter" data-photo-counter aria-live="polite"></span>
+      <a class="photo-lightbox__original" data-photo-original href="" target="_blank" rel="noopener">full resolution ↗</a>
+      <button class="photo-lightbox__close" type="button" data-photo-close aria-label="Close photo viewer" autofocus>×</button>
+    </div>
+    <div class="photo-lightbox__viewer">
+      <button class="photo-lightbox__nav" type="button" data-photo-previous aria-label="Previous photo">←</button>
+      <div class="photo-lightbox__stage">
+        <img data-photo-lightbox-image src="" alt="">
+      </div>
+      <button class="photo-lightbox__nav" type="button" data-photo-next aria-label="Next photo">→</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="{{ '/static/js/gallery.js' | relative_url }}" defer></script>
