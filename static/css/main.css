@@ -307,16 +307,8 @@ h6 {
 .home-work {
   max-width: 700px;
   margin-top: clamp(46px, 7vw, 68px);
-  padding-top: 18px;
+  padding-top: 10px;
   border-top: 1px solid var(--divider);
-}
-
-.home-work-title {
-  margin-bottom: 14px;
-  color: var(--tertiary);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
 }
 
 .home-work-list {
@@ -742,7 +734,7 @@ html.has-photo-lightbox {
 
   .home-work {
     margin-top: 42px;
-    padding-top: 16px;
+    padding-top: 10px;
   }
 
   .home-work-item {
