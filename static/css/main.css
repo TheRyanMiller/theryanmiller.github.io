@@ -269,6 +269,13 @@ h6 {
 }
 
 /* Home */
+.home-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 168px;
+  gap: clamp(30px, 6vw, 54px);
+  align-items: center;
+}
+
 .home-intro {
   max-width: 66ch;
   margin-bottom: 0;
@@ -279,21 +286,10 @@ h6 {
   margin-bottom: 0;
 }
 
-.home-photo {
-  display: block;
-  margin-top: clamp(42px, 8vw, 76px);
-  overflow: hidden;
-}
-
-.home-photo img {
+.home-headshot {
   display: block;
   width: 100%;
-  filter: saturate(0.84);
-  transition: filter 200ms ease;
-}
-
-.home-photo:hover img {
-  filter: saturate(1);
+  border-radius: 2px;
 }
 
 /* Post lists */
@@ -682,6 +678,15 @@ html.has-photo-lightbox {
   .post-row {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+
+  .home-profile {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .home-headshot {
+    width: 132px;
   }
 
   .photo-grid {
