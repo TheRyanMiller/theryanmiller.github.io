@@ -11,7 +11,7 @@ tags:
 - Tracing
 ---
 
-Ethereum storage is deceptively simple: 32-byte slots holding 32-byte values. But mapping those slots back to meaningful variable names is where things get interesting. Particularly when the goal is to go beyond generating a simple layout to reverse engineering SSTOREs within transaction traces. This was my objective with [SlotScan.info](https://slotscan.info), and forms the background for the learnings that I will share here.
+Raw EVM traces are good at showing that storage changed and bad at explaining what changed. They give you addresses, slot hashes, and 32-byte values—not the variable names and types developers recognize. I built [SlotScan](https://slotscan.info) to close that gap. This post walks through the tracing and compiler techniques behind it.
 
 <div style="display: flex; justify-content: center; gap: 16px; margin: 20px 0;">
     <div style="text-align: center; flex: 1; max-width: 48%;">

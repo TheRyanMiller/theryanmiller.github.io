@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Customizing Reth for Up to 16× Faster SlotScan Tracing
+title: Customizing Reth for Up to 16× Faster Tracing
 date: 2026-07-29 00:00:00 -0400
 author: Ryan Miller
 description: How a custom Reth RPC method reduced SlotScan tracing from two transaction replays to one, delivering up to a 16× speedup
