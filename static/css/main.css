@@ -304,6 +304,45 @@ h6 {
   line-height: 1.65;
 }
 
+.home-work {
+  max-width: 700px;
+  margin-top: clamp(46px, 7vw, 68px);
+  padding-top: 18px;
+  border-top: 1px solid var(--divider);
+}
+
+.home-work-title {
+  margin-bottom: 14px;
+  color: var(--tertiary);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.home-work-list {
+  margin: 0;
+}
+
+.home-work-item {
+  display: grid;
+  grid-template-columns: 10.5ch minmax(0, 1fr);
+  gap: clamp(18px, 4vw, 34px);
+  padding: 8px 0;
+}
+
+.home-work-item dt {
+  color: var(--tertiary);
+  font-size: 10px;
+  letter-spacing: 0.035em;
+}
+
+.home-work-item dd {
+  margin: 0;
+  color: var(--primary);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 /* Post lists */
 .post-list {
   border-top: 1px solid var(--divider-strong);
@@ -699,6 +738,17 @@ html.has-photo-lightbox {
 
   .home-headshot {
     width: 128px;
+  }
+
+  .home-work {
+    margin-top: 42px;
+    padding-top: 16px;
+  }
+
+  .home-work-item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 9px 0;
   }
 
   .photo-grid {
