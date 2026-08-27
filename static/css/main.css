@@ -279,6 +279,23 @@ h6 {
   margin-bottom: 0;
 }
 
+.home-photo {
+  display: block;
+  margin-top: clamp(42px, 8vw, 76px);
+  overflow: hidden;
+}
+
+.home-photo img {
+  display: block;
+  width: 100%;
+  filter: saturate(0.84);
+  transition: filter 200ms ease;
+}
+
+.home-photo:hover img {
+  filter: saturate(1);
+}
+
 /* Post lists */
 .post-list {
   border-top: 1px solid var(--divider-strong);
