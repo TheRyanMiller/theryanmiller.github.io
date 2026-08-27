@@ -8,7 +8,15 @@
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' or page.title == 'About Me' %} class="is-active" aria-current="page"{% endif %}>about</a>
       <a href="{{ '/blog.html' | relative_url }}"{% if page.title == 'Writing' or page.layout == 'post' %} class="is-active" aria-current="page"{% endif %}>writing</a>
       <a href="{{ '/photography.html' | relative_url }}"{% if page.title == 'Photography' %} class="is-active" aria-current="page"{% endif %}>photos</a>
-      <button class="theme-toggle" type="button" aria-label="Use dark theme">◐</button>
+      <button class="theme-toggle" type="button" aria-label="Use dark theme">
+        <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.4 14.4A8.5 8.5 0 0 1 9.6 3.6a8.5 8.5 0 1 0 10.8 10.8Z"/>
+        </svg>
+        <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="3.75"/>
+          <path d="M12 2.75v2M12 19.25v2M2.75 12h2M19.25 12h2M5.46 5.46l1.42 1.42M17.12 17.12l1.42 1.42M18.54 5.46l-1.42 1.42M6.88 17.12l-1.42 1.42"/>
+        </svg>
+      </button>
     </nav>
   </div>
   <div class="site-rule" aria-hidden="true"></div>
