@@ -302,20 +302,25 @@ h6 {
   line-height: 1.42;
 }
 
-.home-bio {
+.home-bio,
+.home-personal {
   max-width: 52ch;
-  margin-bottom: 0;
+}
+
+.home-bio,
+.home-personal,
+.home-work-item dd {
   color: var(--secondary);
   font-size: 13px;
   line-height: 1.65;
 }
 
+.home-bio {
+  margin-bottom: 0;
+}
+
 .home-personal {
-  max-width: 52ch;
   margin: 9px 0 0;
-  color: var(--secondary);
-  font-size: 13px;
-  line-height: 1.65;
 }
 
 .home-work {
@@ -343,9 +348,6 @@ h6 {
 
 .home-work-item dd {
   margin: 0;
-  color: var(--primary);
-  font-size: 12px;
-  line-height: 1.55;
 }
 
 /* Post lists */
