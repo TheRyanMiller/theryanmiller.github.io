@@ -276,7 +276,7 @@ h6 {
   max-width: 700px;
 }
 
-.home-profile {
+.home-intro {
   display: grid;
   grid-template-columns: var(--home-photo-width) minmax(0, 1fr);
   gap: var(--home-column-gap);
@@ -294,8 +294,8 @@ h6 {
 }
 
 .home-heading {
-  max-width: 28ch;
-  margin-bottom: 17px;
+  max-width: 31ch;
+  margin-bottom: clamp(28px, 4vw, 36px);
   font-size: clamp(19px, 3vw, 24px);
   font-weight: 500;
   letter-spacing: -0.025em;
@@ -324,9 +324,7 @@ h6 {
 }
 
 .home-work {
-  margin-top: clamp(42px, 6vw, 58px);
-  padding-top: 13px;
-  border-top: 1px solid var(--divider);
+  margin-top: clamp(30px, 4vw, 38px);
 }
 
 .home-work-list {
@@ -335,8 +333,8 @@ h6 {
 
 .home-work-item {
   display: grid;
-  grid-template-columns: 10.5ch minmax(0, 1fr);
-  gap: clamp(20px, 4vw, 34px);
+  grid-template-columns: var(--home-photo-width) minmax(0, 1fr);
+  gap: var(--home-column-gap);
   padding: 6px 0;
 }
 
@@ -344,6 +342,7 @@ h6 {
   color: var(--tertiary);
   font-size: 9px;
   letter-spacing: 0.035em;
+  text-align: right;
 }
 
 .home-work-item dd {
@@ -738,7 +737,7 @@ html.has-photo-lightbox {
     gap: 5px;
   }
 
-  .home-profile {
+  .home-intro {
     grid-template-columns: 1fr;
     gap: 25px;
   }
@@ -748,14 +747,17 @@ html.has-photo-lightbox {
   }
 
   .home-work {
-    margin-top: 42px;
-    padding-top: 10px;
+    margin-top: 36px;
   }
 
   .home-work-item {
     grid-template-columns: 1fr;
     gap: 2px;
     padding: 9px 0;
+  }
+
+  .home-work-item dt {
+    text-align: left;
   }
 
   .photo-grid {
