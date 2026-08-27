@@ -304,6 +304,14 @@ h6 {
   line-height: 1.65;
 }
 
+.home-personal {
+  max-width: 52ch;
+  margin: 9px 0 0;
+  color: var(--secondary);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .home-work {
   max-width: 700px;
   margin-top: clamp(46px, 7vw, 68px);
