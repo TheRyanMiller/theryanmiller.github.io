@@ -325,13 +325,13 @@ h6 {
 }
 
 .home-work-list {
-  margin: 0 0 0 calc(var(--home-photo-width) + var(--home-column-gap));
+  margin: 0;
 }
 
 .home-work-item {
   display: grid;
-  grid-template-columns: 7.5ch minmax(0, 1fr);
-  gap: 16px;
+  grid-template-columns: 10.5ch minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 34px);
   padding: 6px 0;
 }
 
@@ -748,10 +748,6 @@ html.has-photo-lightbox {
   .home-work {
     margin-top: 42px;
     padding-top: 10px;
-  }
-
-  .home-work-list {
-    margin-left: 0;
   }
 
   .home-work-item {
